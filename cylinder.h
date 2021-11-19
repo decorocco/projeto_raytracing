@@ -49,26 +49,26 @@ bool cylinder::hit(const ray& r, double t_min, double t_max, hit_record& rec) co
     bool caso1 = false;
     bool caso2 = false;
 
-    if (root < t_min || t_max < root || p[1] > height/2 || p[1] < -height/2) {
+    if (root < t_min || t_max < root) {
 
         p = r.at(root2);
 
-        if (root2 < t_min || t_max < root2 || p[1] > height/2 || p[1] < -height/2)
+        if (root2 < t_min || t_max < root2)
             return false;
     }
 
     auto x = o[1] + root * d[1];
     auto z = o[1] + root2 * d[1];
 
-    if((x > f[1]- height/2) && (z > f[1] - height/2) && (x < f[1]+height/2) && (z < f[1]+height/2)){
+    if((x > f[1] - height/2) && (z > f[1] - height/2) && (x < f[1]+height/2) && (z < f[1]+height/2)){
         p = r.at(root2);
     } 
 
-    else if(!(o[1] + root * d[1] > f[1] - height/2) != !(o[1] + root2 > f[1] - height/2)){
+    else if(!(x > f[1] - height/2) != !(z > f[1] - height/2)){
         p = r.at(((f[1] + height) - o[1]) / d[1]);
         caso1 = true;
     }
-    else if(!(o[1] + root * d[1] < f[1] + height/2) != !(o[1] + root2 < f[1] + height/2)){
+    else if(!(x < f[1] + height/2) != !(z < f[1] + height/2)){
         p = r.at((f[1] - o[1]) / d[1]);
         caso2 = true;
     }

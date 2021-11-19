@@ -57,16 +57,16 @@ int main() {
     //auto material_left   = make_shared<metal>(color(0.2, 0.2, 0.8));
     //auto material_right  = make_shared<metal>(color(0.8, 0.6, 0.2));
     auto difuso_azul     = make_shared<lambertian>(color(0, 0, 0.8));
-    auto metal_branco    = make_shared<metal>(color(255, 255, 255));
+    //auto metal_branco    = make_shared<metal>(color(255, 255, 255));
 
-    world.add(make_shared<cylinder>(point3(-1,0,0), 1, 2, difuso_azul));
+    world.add(make_shared<cylinder>(point3(0,0,0), 1, 1.5, difuso_azul));
     //world.add(make_shared<sphere>(point3(0,-100.5,-1), 100, material_ground));
     //world.add(make_shared<cylinder>(point3(0,0,0), 0.2, 0.5, metal_branco));
 
 
     // Camera
     //point3 lookfrom(13,2,3);
-    point3 lookfrom(13,10,5);
+    point3 lookfrom(13,10,3);
     point3 lookat(0,0,0);
     vec3 vup(0,1,0);
     auto dist_to_focus = 10.0;
