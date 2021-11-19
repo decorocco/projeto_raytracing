@@ -1,3 +1,2 @@
-# Projeto 2: Raytracing
-Computação Gráfica
+# Computação Gráfica - Projeto 2: Raytracing
 ### Integrantes: André Rocco & André Tavernaro
